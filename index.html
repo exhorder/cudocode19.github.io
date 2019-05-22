@@ -40,7 +40,7 @@
 
 			<div class="row" style="margin-top: 1em">
 				<div class="col-md-10">
-					<p>The result is {{result}}</p>
+					<p>The result is {{ result }}</p>
 				</div>
 				<div class="col-md-2 text-right">
 					<button class="btn btn-primary form-control" v-on:click="clickRand">Rand</button>
@@ -54,8 +54,10 @@
 			el: "#app",
 			methods: {
 				addMenu() {
-					this.shops.push(this.item)
-					this.item = ""
+					if (this.item.trim().length > 0) {
+						this.shops.push(this.item)
+						this.item = ""
+					}
 				},
 				clickDelete(index) {
 					this.shops.splice(index, 1)
