@@ -17,36 +17,36 @@
 		<title>Document</title>
 	</head>
 	<body>
-		<div id="app" class="container col-6">
+		<div id="app" class="container col-md-6 col-sm-12">
 			<h3 class="text-center">Welcome To What-Eat-It</h3>
 			<h4 class="text-center">I don't know what i want to eat at lunch. Random eat for me.</h4>
 
 			<div v-for="(item, index) in shops" v-bind:key="index" class="list-group-item">
 				<div class="row">
-					<div class="col-md-8">
+					<div class="col-md-8 col-8">
 						{{ item }}
 					</div>
-					<div class="col-md-4 text-center">
+					<div class="col-md-4 col-4 text-center ">
 						<button class="btn btn-danger" v-on:click="clickDelete(index)">Remove</button>
 					</div>
 				</div>
 			</div>
 
 			<div class="row" style="margin-top: 1em">
-				<div class="col-md-10">
+				<div class="col-md-10 col-8">
 					<input class="form-control" type="text" v-model="item" />
 				</div>
-				<div class="col-md-2 text-right">
+				<div class="col-md-2 col-4">
 					<button class="btn btn-info form-control" v-on:click="addMenu">Add</button>
 				</div>
 			</div>
 
 			<div class="row" style="margin-top: 1em">
-				<div class="col-md-10">
+				<div class="col-md-10 col-8">
 					<p>The result is {{ result }} 	<i v-if="success" class="material-icons green600">done</i></p>
 				
 				</div>
-				<div class="col-md-2 text-right">
+				<div class="col-md-2 col-4">
 					<button class="btn btn-primary form-control" v-on:click="clickRand">Rand</button>
 				</div>
 			</div>
